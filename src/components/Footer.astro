@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "./Link.astro";
+
+const links = [
+  {
+    ariaLabel: "See my Github profile",
+    icon: "feather:github",
+    href: "https://github.com/waishnav",
+  },
+  {
+    ariaLabel: "See my Twitter profile",
+    icon: "feather:twitter",
+    href: "https://twitter.com/wshxnv",
+  },
+  {
+    ariaLabel: "See my LinkedIn profile",
+    icon: "feather:linkedin",
+    href: "https://www.linkedin.com/in/waishnav-deore",
+  },
+  {
+    ariaLabel: "Send me an email",
+    icon: "feather:mail",
+    href: "mailto:hello@",
+  },
+];
+---
+
+<footer class="text-gray-400 p-4 text-center text-sm">
+  <div
+    class="flex justify-center gap-4 [&>a]:mb-2 [&>a]:text-inherit hover:[&>a]:text-blue-400"
+  >
+    {
+      links.map((link) => (
+        <Link href={link.href} aria-label={link.ariaLabel}>
+          <Icon name={link.icon} width={20} height={20}/>
+        </Link>
+      ))
+    }
+  </div>
+  &copy; {new Date().getFullYear()} Waishnav. All rights reserved.
+</footer>

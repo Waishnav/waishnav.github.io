@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Link from "../components/Link.astro";
+import BlogPostList from "../components/BlogPostList.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = await getCollection("blog");
+---
+
+<BaseLayout title="Home">
+  <div class="grid gap-y-20 fr-1 max-w-screen-md mx-auto">
+    <section>
+      <h1 class="text-2xl mb-4">Hi, I'm Waishnav</h1>
+      <h1 class="text-4xl mb-4">
+        A software dev who loves to build products and write my thoughts on the web.
+      </h1>
+      <p class="mb-4">
+        Find me on
+        <Link href="https://github.com/waishnav">GitHub</Link>,
+        <Link href="https://twitter.com/wshxnv">Twitter</Link>, and
+        <Link href="https://www.linkedin.com/in/waishnav-deore">LinkedIn</Link>. Or
+        send me an <Link href="mailto:hello@wshxv.idk">email</Link>.
+      </p>
+    </section>
+    <section>
+      <h2 class="text-3xl font-bold mb-2">Recent posts</h2>
+      <hr class="border-t border-gray-200" />
+      <BlogPostList posts={posts} recentOnly />
+    </section>
+  </div>
+</BaseLayout>

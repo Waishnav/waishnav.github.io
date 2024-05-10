@@ -1,0 +1,25 @@
+---
+interface Props {
+  tags?: string[];
+  cutoff?: number;
+}
+const { tags = [], cutoff } = Astro.props;
+---
+
+{
+  tags.length > 0 && (
+    <div class="flex gap-2 pt-2">
+      {tags.slice(0, cutoff).map((tag) => (
+        <a
+          href={`/blog/tags/${tag}`}
+          class="inline p-1 text-gray-700 bg-gray-200 hover:text-blue-700 hover:underline"
+        >
+          #{tag}
+        </a>
+      ))}
+      {cutoff && cutoff > 0 && tags.length > cutoff && (
+        <span>+{tags.length - cutoff}</span>
+      )}
+    </div>
+  )
+}
