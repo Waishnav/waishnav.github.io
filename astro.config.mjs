@@ -6,6 +6,6 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://wshxnv.idk",
+  site: "https://waishnav.github.io",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
 });
