@@ -136,9 +136,16 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"freelance-work-experience.md": {
-	id: "freelance-work-experience.md";
-  slug: "freelance-work-experience";
+"community-bonding-period-gsoc24-experience-at-circuitverse.md": {
+	id: "community-bonding-period-gsoc24-experience-at-circuitverse.md";
+  slug: "community-bonding-period-gsoc24-experience-at-circuitverse";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"freelance-work-experience-monitorme.io.md": {
+	id: "freelance-work-experience-monitorme.io.md";
+  slug: "freelance-work-experience-monitormeio";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
