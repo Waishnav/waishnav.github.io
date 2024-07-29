@@ -150,6 +150,34 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"week-1-2-report-gsoc24-circuitverse.md": {
+	id: "week-1-2-report-gsoc24-circuitverse.md";
+  slug: "week-1-2-report-gsoc24-circuitverse";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"week-3-4-experience-moderation-tools-and-spam-reports-gsoc24-circuitverse.md": {
+	id: "week-3-4-experience-moderation-tools-and-spam-reports-gsoc24-circuitverse.md";
+  slug: "week-3-4-experience-moderation-tools-and-spam-reports-gsoc24-circuitverse";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"week-5-6-report-gsoc24.md": {
+	id: "week-5-6-report-gsoc24.md";
+  slug: "week-5-6-report-gsoc24";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"week-7-8-report-markdown-editor-and-topic-search.md": {
+	id: "week-7-8-report-markdown-editor-and-topic-search.md";
+  slug: "week-7-8-report-markdown-editor-and-topic-search";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 };
 
 	};
