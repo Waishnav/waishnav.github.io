@@ -1,9 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { compareBlogEntriesByPubDate } from "../utils";
-import Link from "./Link.astro";
 import FormattedDate from "./FormattedDate.astro";
-import FormattedTags from "./FormattedTags.astro";
 
 interface Props {
   posts: CollectionEntry<"blog">[];
@@ -11,39 +9,50 @@ interface Props {
 }
 
 const { posts, recentOnly } = Astro.props;
+
+// Group posts by year
+const groupPostsByYear = (posts: CollectionEntry<"blog">[]) => {
+  const grouped = posts.reduce((acc, post) => {
+    const year = new Date(post.data.pubDate).getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  }, {} as Record<number, CollectionEntry<"blog">[]>);
+
+  // Sort years in descending order
+  return Object.entries(grouped)
+    .sort(([a], [b]) => Number(b) - Number(a))
+    .slice(0, recentOnly ? 1 : undefined);
+};
+
+const groupedPosts = groupPostsByYear(posts.sort(compareBlogEntriesByPubDate));
+
 ---
 
-<ul class="grid mt-4 gap-y-6">
-  {
-    posts
-      .sort(compareBlogEntriesByPubDate)
-      .slice(0, recentOnly ? 5 : undefined)
-      .map((post) => (
-        <li class="block">
-          <a href={`/blog/${post.slug}/`}>
-            <h4 class="text-xl font-bold hover:underline hover:text-blue-400">
-              {post.data.title}
-            </h4>
-          </a>
-          <FormattedDate date={post.data.pubDate} />
-          {
-            !recentOnly && (
-              <FormattedTags
-                tags={post.data.tags}
-                cutoff={recentOnly ? 2 : undefined}
-              />
-            )}
-        </li>
-        <hr class="border-t border-gray-200" />
-      ))
-  }
-  {
-    recentOnly && (
-      <li>
-        <Link href="/blog" class="hover:text-blue-400 hover:underline">
-          Read more...
-        </Link>
-      </li>
-    )
-  }
-</ul>
+<table>
+  <tbody class="flex flex-col gap-6">
+    {groupedPosts.map(([year, yearPosts]) => (
+      <>
+        <tr>
+          <td colspan="2" class="text-xl font-bold py-2">{year}</td>
+        </tr>
+        {yearPosts.slice(0, recentOnly ? 5 : undefined).map((post) => (
+          <tr class="">
+            <td class="w-20">
+              <FormattedDate date={post.data.pubDate} />
+            </td>
+            <td>
+              <a href={`/blog/${post.slug}/`}>
+                <h4 class="md:text-xl text-lg font-bold hover:underline text-blue-400">
+                  {post.data.title}
+                </h4>
+              </a>
+            </td>
+          </tr>
+        ))}
+      </>
+    ))}
+  </tbody>
+</table>
