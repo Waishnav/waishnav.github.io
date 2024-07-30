@@ -17,7 +17,7 @@ So, grab yourself a cup of coffee, settle in, and enjoy the read! 😊
 Beginning
 =========
 
-In early September 2023, my friend [Chinmay](https://www.linkedin.com/in/chinmay-r-joshi/) told me about a opportunity to work at [MonitorMe.io](https://monitorme.io) and recommended me as a frontend freelancer to join the project. I’m really thankful to him and [Bishakh Gosh](https://www.linkedin.com/in/ghoshbishakh/) —Co-Founder of Pinggy.io as they helped me getting this opportunity.
+In early September 2023, my friend [Chinmay](https://www.linkedin.com/in/chinmay-r-joshi/) told me about a opportunity to work at [MonitorMe.io](https://monitorme.io) and recommended me as a frontend freelancer to join the project. I’m really thankful to him and [Bishakh Gosh](https://www.linkedin.com/in/ghoshbishakh/) — Co-Founder of [Pinggy.io](https://pinggy.io) as they helped me getting this opportunity.
 
 My journey with the team began on September 15th. On the very first day, the Shuvam and Abhishek walked me through the product’s idea and vision. Understanding this was crucial for me to design UI and experiences that aligned perfectly with their vision. They were incredibly helpful in explaining the product and delving into the nitty-gritty details of the market’s existing competition.
 
@@ -34,7 +34,7 @@ While deciding between TypeScript and JavaScript, Abhishek granted me the freedo
 
 Ultimately, I chose JavaScript over TypeScript to avoid type masterbation.
 
-> Reflecting on that decision, I realize there wasn’t a clear winner between TypeScript and JavaScript. The only advantage TypeScript would have provided is a well-documented code base for our response data, which could have been beneficial for new developers joining the project.
+> Edited: Reflecting on that decision, I realize there wasn’t a clear winner between TypeScript and JavaScript. The only advantage TypeScript would have provided is a well-documented code base for our response data, which could have been beneficial for new developers joining the project.
 
 Frontend is not only about UI
 =============================

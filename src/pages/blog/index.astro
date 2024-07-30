@@ -8,9 +8,6 @@ const posts = await getCollection("blog");
 
 <BaseLayout title="Blog">
   <div class="grid gap-y-12 max-w-screen-md mx-auto">
-    <section>
-      <h2 class="font-bold">{posts.length} posts</h2>
-    </section>
     <section class="flex flex-grow">
       <BlogPostList posts={posts} />
     </section>

@@ -27,19 +27,18 @@ const footerLinkClass =
 
 <BaseLayout title={title} description={description}>
   <div class="grid gap-y-4 max-w-screen-md mx-auto">
-    <section>
-      <a href="/blog" class="text-gray-400 hover:text-blue-400 hover:underline"
-        >← Blog</a
-      >
-    </section>
     <article class="grid gap-y-8">
       <header>
-        <FormattedDate date={pubDate} />
-        <h1 class="text-3xl font-bold pb-4">{title}</h1>
-        <FormattedTags tags={tags} />
+        <h1 class="text-4xl font-bold pb-4">{title}</h1>
+        <FormattedDate withYear date={pubDate} />
+        {
+        //<FormattedTags tags={tags} />
+        }
       </header>
       <div
+        style="font-family: serif; font-weight: 100;"
         class:list={[
+          "text-custom",
           "prose max-w-screen-md",
           proseAnchorClass,
           proseBlockquoteClass,

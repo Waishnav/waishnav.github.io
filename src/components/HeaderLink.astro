@@ -6,7 +6,8 @@ type Props = HTMLAttributes<"a">;
 const { href, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = String(href).split("/")[1] === pathname.split("/")[1];
+const isInternalLink = href.startsWith('/');
+const isActive = isInternalLink && String(href).split("/")[1] === pathname.split("/")[1];
 const activeClass = "border-b-2 border-black";
 ---
 

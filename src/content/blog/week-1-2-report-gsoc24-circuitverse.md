@@ -6,9 +6,9 @@ tags: [gsoc, circuitverse, google-summer-of-code, ruby, rails, open-source, rail
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*eU_y_ELIJd7IfHfA.png)
 
-Alright!! Week 1–2 was pretty fun and interesting in a way I had to work on new stuff which I was not aware of few!
+Alright!! Week 1–2 was pretty fun and interesting. In a way that I had to work on new stuff which I was not aware of!
 
-This two weeks was for setting up the project i.e setting up development environment and testing environment so that I can have good DX while working on this project!
+Theses two weeks was for setting up the project i.e setting up development environment and testing environment so that I can have good DX while working on this project!
 
 ![](https://miro.medium.com/v2/resize:fit:700/1*PEQey_eMVQVLJprYo5M57Q.png)
 
