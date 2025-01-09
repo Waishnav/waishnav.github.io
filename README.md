@@ -1,9 +1,4 @@
-My personal website has moved to [benborgers/www](https://github.com/benborgers/www).
-
----
-
-The website at [`ben.page`](https://ben.page), powered by Astro.
+Special thanks to [benborgers](https://github.com/benborgers/) for his website. I used it as template and build it on top of it :)
 
 - Install: `npm install`
 - Build: `npm run build`
-- Spellcheck: `npm run spellcheck`
