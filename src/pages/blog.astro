@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../components/layout.astro";
+import Star from "../components/star.astro";
+import getPostDate from "../lib/get-post-date";
+
+const posts = (await getCollection("posts"))
+  .filter((post) => !post.data.unlisted)
+  .sort((a, b) => {
+    return getPostDate(b).getTime() - getPostDate(a).getTime();
+  });
+
+// Group posts by year
+const postsByYear = posts.reduce((acc, post) => {
+  const year = getPostDate(post).getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {} as Record<number, typeof posts>);
+
+// Sort years in descending order
+const sortedYears = Object.keys(postsByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<Layout title="Waishnav' blogs">
+  <div class="space-y-12">
+    {
+      sortedYears.map((year) => (
+        <section>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">{year}</h2>
+          <div class="space-y-8">
+            {postsByYear[year].map((post) => (
+              <div class="group flex items-base line gap-6">
+                <time class="font-handwriting text-gray-500 w-20">
+                  {getPostDate(post).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </time>
+                <div class="flex-1">
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="font-serif text-blue-800 text-2xl underline decoration-gray-300"
+                  >
+                    {post.data.title}
+                    {post.data.bestOf && <Star class="inline-block ml-2" />}
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</Layout>

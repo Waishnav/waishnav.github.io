@@ -1,0 +1,87 @@
+<a href="/">
+  <div
+    class="bg-white shadow-sm w-max p-1.5 sm:p-2 ring-1 ring-gray-200/50 animate-polaroid"
+  >
+    <img src="/me.jpg" class="w-16 h-16 sm:w-16 sm:h-16 bg-gray-200 animate-develop" />
+    <!--
+    <p
+      class="mt-1.5 text-base font-handwriting font-medium text-gray-800 text-center"
+    >
+      Waishnav
+    </p>
+    -->
+  </div>
+</a>
+
+<!-- <style>
+  /* Drop animation
+  @keyframes polaroid-drop {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px) rotate(-10deg) scale(0.9);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(15px) rotate(5deg) scale(1.1);
+    }
+    80% {
+      transform: translateY(-7px) rotate(0deg) scale(0.95);
+    }
+    90% {
+      transform: translateY(3px) rotate(3deg) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotate(2deg) scale(1);
+    }
+  }
+  */
+
+  /* Flip animation
+  @keyframes polaroid-flip {
+    0% {
+      opacity: 0;
+      transform: perspective(1000px) rotateX(-90deg) translateY(30px) scale(0.9);
+    }
+    50% {
+      opacity: 1;
+      transform: perspective(1000px) rotateX(20deg) translateY(-10px) scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(1000px) rotateX(0deg) translateY(0) rotate(2deg) scale(1);
+    }
+  }
+  */
+
+  @keyframes polaroid-entrance {
+    0% {
+      opacity: 0;
+      transform: rotate(-1deg) scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(2deg) scale(1);
+    }
+  }
+
+  @keyframes develop {
+    0% {
+      filter: brightness(2) contrast(0.3) saturate(0);
+    }
+    50% {
+      filter: brightness(1.5) contrast(0.7) saturate(0.5);
+    }
+    100% {
+      filter: brightness(1) contrast(1) saturate(1);
+    }
+  }
+
+  .animate-polaroid {
+    animation: polaroid-entrance 0.5s ease-out forwards;
+  }
+
+  .animate-develop {
+    animation: develop 2s ease-in-out forwards;
+  }
+</style> -->

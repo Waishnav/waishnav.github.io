@@ -1,0 +1,83 @@
+---
+interface Props {
+  title: string;
+}
+
+import "../css/style.css";
+import "../css/fonts.css";
+
+import Polaroid from "./polaroid.astro";
+import NavLink from "./nav-link.astro";
+import Prose from "./prose.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{title}</title>
+    <link rel="icon" href="https://emojicdn.elk.sh/🐙" />
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="Waishnav Deore" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Waishnav Deore"
+      href="/rss"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://owl.benborgers.com/script.js"
+      data-site="LBHPTBHO"
+      defer
+      data-included-domains="ben.page"
+      is:inline></script>
+  </head>
+  <body class="antialiased bg-gray-50 text-gray-950 selection:bg-blue-800/25">
+    <div class="px-4 pb-24 mx-auto">
+      <nav class:list={[
+          "bg-gray-100 border-b-2 border--b-gray-200 -mx-4 p-4",
+          "z-10",
+        ]}
+      >
+        <div class="flex justify-between items-center gap-10 mx-auto max-w-3xl">
+          <div class="flex items-center gap-3">
+            <Polaroid />
+
+            <a
+              href="/"
+              class="mt-1.5 text-2xl font-handwriting font-medium text-gray-800 text-center"
+            >
+              Waishnav
+            </a>
+          </div>
+        <div class="space-y-0.5 text-xl">
+          <div class="flex flex-wrap gap-x-5 text-gray-500">
+            <NavLink href="/">home</NavLink>
+            <NavLink href="/blog">blog</NavLink>
+            <NavLink href="https://x.com/wshxnv" newTab>
+              twitter
+            </NavLink>
+          </div>
+        </div>
+        </div>
+      </nav>
+      <div class="w-full max-w-3xl mx-auto mt-12">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
