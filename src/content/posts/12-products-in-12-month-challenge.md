@@ -1,21 +1,34 @@
 ---
-title: 12 products in 12 month challenge
-date: 2025-01-01
-tags: [indie-hacking, buildinpublic]
-unlisted: true
+title: 12 Products in 12 Months Challenge  
+date: '2024-12-31T18:30:00.000Z'  
+tags:  
+  - indie-hacking  
+  - buildinpublic  
+unlisted: true  
 ---
 
-Last year, I tried building AI apps to get my hand dirty in AI-hype train, but I failed, to know more here is the [story](https://waishnav.tech/blog/hyped-studio-failure-story) to read.
-TLDR, I failed cause i did not know the user's needs, and I was not aware about my end users i.e it was not my own problem. So I was not motivated enough to build that AI slop.
-So after 3 months of building I stopped, though as a Engineer I enjoyed working on it, since there were lots of limitation and challenges involving video editing at Client Side.
-I've explained about it in the above blog which I shared my all learnings and insights. Let me know your thoughts in my DM's :)
+## Why I'm Taking on the 12 Products in 12 Months Challenge  
 
-This year in 2025, I thought all these OG indie hackers have gone through 12 product in 12 months challenge, and over this challenge they are able to find 1-2 ideas on which they can spend their next few years to build and scale it.
-So I thought why not take this challenge and see if I can find my best idea. My plan is simple, I'll buid simple Mini apps in two-three weeks, and market it on Reddit, Twitter, HN, Discord etc
-And see it gets any traction. If I able to sell 50-100 customers which is alot btw (maybe I've lot more expectation), I'll continue shipping new feature to this apps and see I can scale the idea.
+Last year, I tried riding the AI wave by building AI apps to explore the hype. Long story short: I failed. If you're curious, you can read the full [story here](https://waishnav.tech/blog/hyped-studio-failure-story). But the TL;DR is simple—I didn't understand my users' needs. I wasn’t solving my own problem, so I lacked the motivation to see it through.  
 
-To be honest, I don't know this experimenet is gonna go well or not, but I just love building things for other humans! so that's what inspires me everyday, everyhour!
-I might get bored and burnout at the end of this upcoming year, but i want to build something which 1000 people on this planet can use and pay for it on daily basis!
+Still, I enjoyed the process. As an engineer, tackling the challenges of client-side video editing with JavaScript was a fun technical puzzle. I shared everything I learned in the blog linked above. Feel free to check it out and share your thoughts!  
 
-Maybe I'll not be able to finish it, since I've to ship 1 apps every single month, this includes building and marketing it. Fun part is as I build more, I'll be making my own frameworks or templates for future, so for later apps, it will be lot faster to iterate basic Auth, Payment stuffs.
-I love Cloudflare more than Vercel, so for the most of my apps, will be using cloudflare pages, workers, d1 for database!
+## Why This Challenge?  
+
+In 2025, I’ve decided to follow in the footsteps of OG indie hackers who took on the 12 Products in 12 Months challenge. Many of them found one or two scalable ideas to focus on for the long haul through this process.  
+
+My plan is straightforward: I’ll build simple mini-apps in 2-3 weeks, launch them on platforms like Reddit, Twitter, Hacker News, and Discord, and see if they gain traction. If I can get 50-100 paying customers (which, honestly, feels like a lot right now), I’ll double down, add features, and scale those apps.  
+
+## What If I Fail?  
+
+I’ll admit—this could totally flop. I might burn out or get bored halfway through the year. But building things that other people find useful is what excites me **every single day**. If I can create something that even 1,000 people around the world use and pay for, it’ll all be worth it.  
+
+Shipping one app every month is going to be tough. It’s not just about coding—it’s also marketing, gathering feedback, and iterating fast. The good news is that as I build more, I’ll develop my own frameworks and templates to speed up things like authentication and payment integration for future projects.  
+
+This time around, I’m switching things up by using Cloudflare’s infrastructure instead of Vercel. From their CDN to the SQLite D1 database, I’m excited to experiment and learn.  
+
+## Wrapping It Up  
+
+So, here I am—kicking off this challenge with a mix of excitement and uncertainty. Will I find that one golden idea? Who knows? But I’m here for the process, the lessons, and the fun of building things that (hopefully) make people’s lives better.  
+
+Follow along if you’re curious to see how this journey unfolds. I’d love to hear your thoughts, ideas, or feedback. Here’s to a year of building, learning, and maybe even a little failing. Let’s see where this road takes me!  
