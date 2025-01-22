@@ -11,7 +11,7 @@ unlisted: true
 
 Last year, I tried riding the AI wave by building AI apps to explore the hype. Long story short: I failed. If you're curious, you can read the full [story here](https://waishnav.tech/blog/hyped-studio-failure-story). But the TL;DR is simple—I didn't understand my users' needs. I wasn’t solving my own problem, so I lacked the motivation to see it through.  
 
-Still, I enjoyed the process. As an engineer, tackling the challenges of client-side video editing with JavaScript was a fun technical puzzle. I shared everything I learned in the blog linked above. Feel free to check it out and share your thoughts![](everything)
+Still, I enjoyed the process. As an engineer, tackling the challenges of client-side video editing with JavaScript was a fun technical puzzle. I shared everything I learned in the blog linked above. Feel free to check it out and share your thoughts
 
 ## why this challenge?
 
