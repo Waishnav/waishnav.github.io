@@ -20,6 +20,8 @@ collections:
         allowed_values:
           - indie-hacking
           - projects
+          - name
+        stored_values: []
       - name: unlisted
         type: boolean
         required: false
