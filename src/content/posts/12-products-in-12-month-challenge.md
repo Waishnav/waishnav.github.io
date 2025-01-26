@@ -29,6 +29,15 @@ This time around, I’m switching things up by using Cloudflare’s infrastructu
 
 ## wrapping up
 
+        <iframe
+          src="https://www.youtube.com/embed/zWTvv9mt0OE"
+          title="How to use GitCMS with Astro"
+          class="absolute top-0 left-0 w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+        </iframe>
+
 So, here I am—kicking off this challenge with a mix of excitement and uncertainty. Will I find that one golden idea? Who knows? But I’m here for the process, the lessons, and the fun of building things that (hopefully) make people’s lives better.  
 
 Follow along if you’re curious to see how this journey unfolds. I’d love to hear your thoughts, ideas, or feedback. Here’s to a year of building, learning, and maybe even a little failing. Let’s see where this road takes me!
