@@ -1,7 +1,14 @@
 ---
 title: Week 1 and 2 Report- GSoC'24 CircuitVerse
-date: 2024-06-10
-tags: [gsoc, circuitverse, google-summer-of-code, ruby, rails, open-source, rails-engine]
+date: 2024-06-10T00:00:00.000Z
+tags:
+  - gsoc
+  - circuitverse
+  - google-summer-of-code
+  - ruby
+  - rails
+  - open-source
+  - rails-engine
 ---
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*eU_y_ELIJd7IfHfA.png)
@@ -18,9 +25,8 @@ In this two weeks, I worked on two PRs, which leading me to understand the benif
 
 Ruby is dynamically typed language, so there are two major option for ruby development:
 
-1.  RubyLSP — developed and maintain by Spotify
-2.  Solargraph — maintained by open source community
-
+- RubyLSP — developed and maintain by Spotify
+- Solargraph — maintained by open source community
 I initially setuped with Solargraph, but after talking to my project mentor Aboobacker, he suggested RubyLSP since it will be getting part of rails in future and it is being actively developed by shopify team.
 
 Also Solargraph has extra support for Yard Docs, if I had gone with this option then I had to write documentation of the each `class` and `module` obeve it, so that editor will know about it through LSP.
@@ -47,5 +53,5 @@ Followed, CI tests were also failing since for old rails version so I removed th
 
 These two week were fun with lots of time me being infront of my laptop, debugging through those tests fail error messages, tracing each and every error and searching across internet and reading through comments and reading through gemspec file of each gems we have! It was fun and learnt a lot of stuffs.
 
-Upcoming week will be about implementable of Spam detection and Language filters to avoid hateful, abusive language in forum posts.  
+Upcoming week will be about implementable of Spam detection and Language filters to avoid hateful, abusive language in forum posts.
 Thanks for reading this so far! And stay tuned for upcoming blogs of my GSoC journey 😃
