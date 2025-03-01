@@ -22,3 +22,17 @@
 >
   <slot />
 </div>
+
+<style>
+  .prose a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Ensure images don't overflow on mobile */
+  .prose img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

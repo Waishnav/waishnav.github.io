@@ -7,7 +7,8 @@ const postsCollection = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     unlisted: z.boolean().default(false),
-    date: z.date(),
+    // date can be string or date if it is string then convert it to date
+    date: z.date().or(z.string().transform((str) => new Date(str))),
     tags: z.array(z.string()).optional(),
     bestOf: z.boolean().default(false),
   }),

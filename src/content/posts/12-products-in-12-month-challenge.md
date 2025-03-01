@@ -1,10 +1,10 @@
 ---
 title: 12 Products in 12 Months Challenge
-date: '2024-12-31T18:30:00.000Z'
+date: '2025-01-01T18:30:00.000Z'
 tags:
   - indie-hacking
   - buildinpublic
-unlisted: true
+unlisted: false 
 ---
 
 ## it's just natural to build more

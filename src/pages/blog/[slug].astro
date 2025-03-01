@@ -66,4 +66,13 @@ const { Content } = await post.render();
     </div>
   </div>
   -->
-</Layout> 
+</Layout>
+
+<style>
+  /* Add styles to handle long URLs and prevent overflow on mobile */
+  :global(.prose a) {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+</style> 

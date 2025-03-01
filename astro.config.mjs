@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ben.page",
+  site: "https://waishnav.tech",
   integrations: [tailwind(), sitemap()],
   trailingSlash: "never",
   markdown: {

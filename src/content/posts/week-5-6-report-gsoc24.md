@@ -8,7 +8,7 @@ Due to illness, I had to slightly adjust my timeline after consulting with Tanmo
 
 ## Week 5
 
-PR: [https://github.com/CircuitVerse/CircuitVerse/pull/5005](https://github.com/CircuitVerse/CircuitVerse/pull/5005)
+PR: [#5005](https://github.com/CircuitVerse/CircuitVerse/pull/5005)
 
 Our primary channel for formal communication is Slack, where users can discuss issues related to our simulator. Each contributor is also active on Slack. Therefore, it’s important to implement Slack integration so that whenever a new thread is created on the forum, the Slack community is notified.
 
@@ -29,7 +29,7 @@ New forum Thread now trigger automatic notifications in our Slack channel, keepi
 
 ## Week 6
 
-PR: [https://github.com/CircuitVerse/simple\_discussion/pull/26](https://github.com/CircuitVerse/simple_discussion/pull/26)
+PR: [#26](https://github.com/CircuitVerse/simple_discussion/pull/26)
 
 In Week 6, I started feeling better and recovered from my sickness. I was happy to take on a challenging task, especially since the previous week was relatively relaxed. I decided to work on the Markdown Editor feature, which involves a lot of complexity.
 
