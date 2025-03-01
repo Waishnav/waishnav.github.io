@@ -18,9 +18,9 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <h1 class="text-4xl leading-[3.5rem] font-bold">{post.data.title}</h1>
+  <h1 class="text-3xl sm:text-4xl leading-tight sm:leading-[3.5rem] font-bold">{post.data.title}</h1>
 
-  <p class="mt-2 text-lg text-gray-400 font-medium font-handwriting">
+  <p class="mt-2 text-base sm:text-lg text-gray-400 font-medium font-handwriting">
     {
       post.data.date.toLocaleString("en-US", {
         timeZone: "UTC",
@@ -74,5 +74,17 @@ const { Content } = await post.render();
     word-break: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+  }
+  
+  /* Additional responsive adjustments for the blog post */
+  @media (max-width: 640px) {
+    :global(.prose p) {
+      margin-bottom: 1em;
+    }
+    
+    :global(.prose ul),
+    :global(.prose ol) {
+      padding-left: 1.5em;
+    }
   }
 </style> 

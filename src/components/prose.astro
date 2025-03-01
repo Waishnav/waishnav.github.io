@@ -1,6 +1,7 @@
 <div
   class:list={[
-    "prose prose-stone prose-2xl max-w-none",
+    "prose prose-stone max-w-none",
+    "prose-lg md:prose-xl lg:prose-2xl",
     "text-gray-900",
     "prose-strong:font-bold",
     "prose-p:font-serif prose-p:leading-[1.6]",
@@ -8,7 +9,7 @@
     "prose-a:font-normal prose-a:text-blue-800",
     "prose-li:marker:text-gray-900",
     "prose-headings:text-gray-900",
-    "prose-h2:text-3xl prose-h3:text-2xl",
+    "prose-h2:text-2xl md:prose-h2:text-3xl prose-h3:text-xl md:prose-h3:text-2xl",
     "prose-img:max-h-[70vh] prose-video:max-h-[70vh]",
     "prose-figcaption:text-center prose-figcaption:text-base",
     "prose-code:text-[0.9em] prose-pre:text-[0.8em] ",
@@ -34,5 +35,23 @@
   .prose img {
     max-width: 100%;
     height: auto;
+  }
+
+  /* Additional responsive adjustments */
+  @media (max-width: 640px) {
+    .prose {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    
+    .prose h2 {
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    
+    .prose h3 {
+      margin-top: 1.3em;
+      margin-bottom: 0.5em;
+    }
   }
 </style>
