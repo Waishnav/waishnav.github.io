@@ -18,23 +18,25 @@ const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <h1 class="text-3xl sm:text-4xl leading-tight sm:leading-[3.5rem] font-bold">{post.data.title}</h1>
+  <div class="px-1">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-[3.5rem] font-bold">{post.data.title}</h1>
 
-  <p class="mt-2 text-base sm:text-lg text-gray-400 font-medium font-handwriting">
-    {
-      post.data.date.toLocaleString("en-US", {
-        timeZone: "UTC",
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      })
-    }
-  </p>
+    <p class="mt-2 text-base sm:text-lg text-gray-400 font-medium font-handwriting">
+      {
+        post.data.date.toLocaleString("en-US", {
+          timeZone: "UTC",
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })
+      }
+    </p>
 
-  <div class="mt-6 sm:mt-8">
-    <Prose>
-      <Content />
-    </Prose>
+    <div class="mt-4 sm:mt-6 md:mt-8">
+      <Prose>
+        <Content />
+      </Prose>
+    </div>
   </div>
 
   <!--
@@ -85,6 +87,17 @@ const { Content } = await post.render();
     :global(.prose ul),
     :global(.prose ol) {
       padding-left: 1.5em;
+    }
+    
+    :global(.prose pre) {
+      margin: 1.5em 0;
+      padding: 0.75rem;
+      font-size: 0.875rem;
+      overflow-x: auto;
+    }
+    
+    :global(.prose img) {
+      margin: 1.5em 0;
     }
   }
 </style> 

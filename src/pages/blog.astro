@@ -27,15 +27,15 @@ const sortedYears = Object.keys(postsByYear)
 ---
 
 <Layout title="Waishnav' blogs">
-  <div class="space-y-12">
+  <div class="space-y-8 sm:space-y-12">
     {
       sortedYears.map((year) => (
         <section>
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">{year}</h2>
-          <div class="space-y-8">
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{year}</h2>
+          <div class="space-y-6 sm:space-y-8">
             {postsByYear[year].map((post) => (
-              <div class="group flex items-base line gap-6">
-                <time class="font-handwriting text-gray-500 w-20">
+              <div class="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                <time class="font-handwriting text-gray-500 sm:w-20">
                   {getPostDate(post).toLocaleDateString("en-US", {
                     month: "short",
                     day: "numeric",
@@ -44,7 +44,7 @@ const sortedYears = Object.keys(postsByYear)
                 <div class="flex-1">
                   <a
                     href={`/blog/${post.slug}`}
-                    class="font-serif text-blue-800 text-2xl underline decoration-gray-300"
+                    class="font-serif text-blue-800 text-xl sm:text-2xl underline decoration-gray-300"
                   >
                     {post.data.title}
                     {post.data.bestOf && <Star class="inline-block ml-2" />}
@@ -58,3 +58,13 @@ const sortedYears = Object.keys(postsByYear)
     }
   </div>
 </Layout>
+
+<style>
+  /* Mobile-specific adjustments */
+  @media (max-width: 640px) {
+    :global(body) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+</style>
