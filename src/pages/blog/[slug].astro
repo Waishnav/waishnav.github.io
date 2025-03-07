@@ -28,7 +28,6 @@ const { Content } = await post.render();
 
     <p 
       class="mt-2 text-base sm:text-lg text-gray-400 font-medium font-handwriting"
-      transition:animate="fade"
     >
       {
         post.data.date.toLocaleString("en-US", {
@@ -42,7 +41,6 @@ const { Content } = await post.render();
 
     <div 
       class="mt-4 sm:mt-6 md:mt-8"
-      transition:animate="fade"
     >
       <Prose>
         <Content />

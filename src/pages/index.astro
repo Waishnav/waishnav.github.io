@@ -22,7 +22,7 @@ const projects = (
     <p transition:animate="fade">
       And I'm building <strong>12 products in 12 months</strong>, all in public.
       Here, I share my journey, insights, and lessons learned along the way.  
-      Let's connect if you have something to share — <a data-email></a>.
+      Let's have a chat if you have something to share — <a data-email></a>.
     </p>
     <script>
       const email = "waishnav.work@gmail.com"
@@ -33,7 +33,7 @@ const projects = (
       el.href = `mailto:${email}`;
     </script>
 
-    <div class="my-12 sm:my-20 pt-4 not-prose" transition:animate="fade">
+    <div class="my-12 sm:my-20 pt-4 not-prose">
       <a
         href={`/blog/${latestBlogPost.slug}`}
         class="block bg-white shadow-sm pl-3 pr-4 sm:pl-4 sm:pr-5 pt-6 pb-3 ring-1 ring-gray-200/50 relative"
@@ -96,13 +96,3 @@ const projects = (
     </div>
   </Prose>
 </Layout>
-
-<style>
-  /* Mobile-specific adjustments */
-  @media (max-width: 640px) {
-    :global(body) {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-</style>

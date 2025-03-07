@@ -30,7 +30,7 @@ const sortedYears = Object.keys(postsByYear)
   <div class="space-y-8 sm:space-y-12">
     {
       sortedYears.map((year) => (
-        <section transition:animate="fade">
+        <section>
           <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{year}</h2>
           <div class="space-y-6 sm:space-y-8">
             {postsByYear[year].map((post) => (
@@ -59,13 +59,3 @@ const sortedYears = Object.keys(postsByYear)
     }
   </div>
 </Layout>
-
-<style>
-  /* Mobile-specific adjustments */
-  @media (max-width: 640px) {
-    :global(body) {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-</style>
