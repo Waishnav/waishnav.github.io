@@ -13,86 +13,101 @@ const projects = (
 ---
 
 <Layout title="Waishnav's Blog">
-  <Prose>
-    <p transition:animate="fade">
-      Hello there! I'm <span class="font-handwriting font-medium">Waishnav</span>,
-      Indie maker, figuring out how to be useful to other humans and not get unemployed by AI :)
-    </p>
+  <div class="px-4 sm:px-0">
+    <Prose>
+      <p transition:animate="fade">
+        Hello there! I'm <span class="font-handwriting font-medium"
+          >Waishnav</span
+        >, Indie maker, figuring out how to be useful to other humans and not
+        get unemployed by AI :)
+      </p>
 
-    <p transition:animate="fade">
-      And I'm building <strong>12 products in 12 months</strong>, all in public.
-      Here, I share my journey, insights, and lessons learned along the way.  
-      Let's have a chat if you have something to share — <a data-email></a>.
-    </p>
-    <script>
-      const email = "waishnav.work@gmail.com"
+      <p transition:animate="fade">
+        And I'm building <strong>12 products in 12 months</strong>, all in
+        public. Here, I share my journey, insights, and lessons learned along
+        the way. Let's have a chat if you have smth interesting to share — <a
+          data-email></a>.
+      </p>
+      <script>
+        const email = "waishnav.work@gmail.com";
 
-      const el = document.querySelector("[data-email]") as HTMLAnchorElement;
+        const el = document.querySelector("[data-email]") as HTMLAnchorElement;
 
-      el.textContent = email;
-      el.href = `mailto:${email}`;
-    </script>
+        el.textContent = email;
+        el.href = `mailto:${email}`;
+      </script>
 
-    <div class="my-12 sm:my-20 pt-4 not-prose">
-      <a
-        href={`/blog/${latestBlogPost.slug}`}
-        class="block bg-white shadow-sm pl-3 pr-4 sm:pl-4 sm:pr-5 pt-6 pb-3 ring-1 ring-gray-200/50 relative"
-      >
-        <div
-          class="bg-white shadow-sm px-2 py-1 ring-1 ring-gray-200/50 w-max absolute -top-3 -left-2 sm:-left-3 -rotate-1"
+      <div class="my-12 sm:my-20 pt-4 not-prose">
+        <a
+          href={`/blog/${latestBlogPost.slug}`}
+          class="block bg-white shadow-sm pl-3 pr-4 sm:pl-4 sm:pr-5 pt-6 pb-3 ring-1 ring-gray-200/50 relative"
         >
-          <p class="text-sm sm:text-base text--800 font-handwriting font-medium italic">
-            latest from the blog:
-          </p>
-        </div>
-        <p 
-          class="font-serif text-blue-800 text-xl sm:text-2xl underline decoration-gray-300"
-          transition:name={`post-title-${latestBlogPost.slug}`}
-        >
-          {latestBlogPost.data.title}
-        </p>
-        <p class="mt-0.5 text-sm sm:text-base font-medium text-gray-400">
-          {
-            latestBlogPost.data.date.toLocaleString("en-US", {
-              timeZone: "UTC",
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })
-          }
-        </p>
-      </a>
-    </div>
-
-    <h3 class="my-4 sm:my-6" transition:animate="fade">Products / Toy Projects</h3>
-
-    <div class="not-prose space-y-3 sm:space-y-4" transition:animate="fade">
-      {
-        projects.map((project) => (
-          <a
-            href={project.data.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block bg-white shadow-sm px-3 sm:px-4 py-2 sm:py-3 ring-1 ring-gray-200/50 hover:shadow-md transition-shadow"
+          <div
+            class="bg-white shadow-sm px-2 py-1 ring-1 ring-gray-200/50 w-max absolute -top-3 -left-2 sm:-left-3 -rotate-1"
           >
-            <div class="flex items-center justify-between">
-                <p class="font-medium text-lg sm:text-xl">{project.data.title}</p>
-              <div class="flex items-center gap-2">
-              {project.data.users >= 0 && (
-                <p class="text-xs sm:text-sm text-gray-400">{project.data.users} users</p>
-              )}
-                {project.data.isActive && (
-                  <div class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                  </div>
-                )}
+            <p
+              class="text-sm sm:text-base text--800 font-handwriting font-medium italic"
+            >
+              latest from the blog:
+            </p>
+          </div>
+          <p
+            class="font-serif text-blue-800 text-xl sm:text-2xl underline decoration-gray-300"
+            transition:name={`post-title-${latestBlogPost.slug}`}
+          >
+            {latestBlogPost.data.title}
+          </p>
+          <p class="mt-0.5 text-sm sm:text-base font-medium text-gray-400">
+            {
+              latestBlogPost.data.date.toLocaleString("en-US", {
+                timeZone: "UTC",
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })
+            }
+          </p>
+        </a>
+      </div>
+
+      <h3 class="my-4 sm:my-6" transition:animate="fade">
+        Products / Toy Projects
+      </h3>
+
+      <div class="not-prose space-y-3 sm:space-y-4" transition:animate="fade">
+        {
+          projects.map((project) => (
+            <a
+              href={project.data.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block bg-white shadow-sm px-3 sm:px-4 py-2 sm:py-3 ring-1 ring-gray-200/50 hover:shadow-md transition-shadow"
+            >
+              <div class="flex items-center justify-between">
+                <p class="font-medium text-lg sm:text-xl">
+                  {project.data.title}
+                </p>
+                <div class="flex items-center gap-2">
+                  {project.data.users >= 0 && (
+                    <p class="text-xs sm:text-sm text-gray-400">
+                      {project.data.users} users
+                    </p>
+                  )}
+                  {project.data.isActive && (
+                    <div class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-            <p class="mt-1 text-xs sm:text-sm text-gray-600">{project.data.description}</p>
-          </a>
-        ))
-      }
-    </div>
-  </Prose>
+              <p class="mt-1 text-xs sm:text-sm text-gray-600">
+                {project.data.description}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </Prose>
+  </div>
 </Layout>
