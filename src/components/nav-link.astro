@@ -17,9 +17,9 @@ const isActive =
   target={newTab ? "_blank" : undefined}
   rel={newTab ? "noopener noreferrer" : undefined}
   class:list={[
-    "font-handwriting font-medium hover:text-gray-800 transition-colors",
-    "text-sm sm:text-base",
-    isActive ? "text-gray-800" : "",
+    "hover:text-gray-800 transition-colors",
+    "text-lg sm:text-xl",
+    isActive ? "underline" : "",
   ]}
 >
   <slot />
