@@ -19,9 +19,17 @@ const { Content } = await post.render();
 
 <Layout title={post.data.title}>
   <div class="px-1">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-[3.5rem] font-bold">{post.data.title}</h1>
+    <h1 
+      class="text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-[3.5rem] font-bold"
+      transition:name={`post-title-${post.slug}`}
+    >
+      {post.data.title}
+    </h1>
 
-    <p class="mt-2 text-base sm:text-lg text-gray-400 font-medium font-handwriting">
+    <p 
+      class="mt-2 text-base sm:text-lg text-gray-400 font-medium font-handwriting"
+      transition:animate="fade"
+    >
       {
         post.data.date.toLocaleString("en-US", {
           timeZone: "UTC",
@@ -32,7 +40,10 @@ const { Content } = await post.render();
       }
     </p>
 
-    <div class="mt-4 sm:mt-6 md:mt-8">
+    <div 
+      class="mt-4 sm:mt-6 md:mt-8"
+      transition:animate="fade"
+    >
       <Prose>
         <Content />
       </Prose>

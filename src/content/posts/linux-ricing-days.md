@@ -22,5 +22,3 @@ One of the major advantages of using a standalone window manager, rather than a 
 I’ve been using Linux for a 6 months now and I can say that it has changed the way I think about computing. The ability to customize and tailor my system to my exact needs has made my experience so much more enjoyable. And the best part? Everything is open-source, meaning that I have the freedom to make changes and share my creations with others. It’s like a potluck, but instead of bringing food, we bring our custom scripts and themes.
 
 If you’re curious about Linux and ricing, I highly recommend giving it a try. It may be intimidating at first, but the community is there to help and the sense of accomplishment you get from customizing your own system is worth it. Happy ricing!
-
-![](https://miro.medium.com/v2/da:true/resize:fit:0/5c50caa54067fd622d2f0fac18392213bf92f6e2fae89b691e62bceb40885e74)

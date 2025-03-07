@@ -30,7 +30,7 @@ const sortedYears = Object.keys(postsByYear)
   <div class="space-y-8 sm:space-y-12">
     {
       sortedYears.map((year) => (
-        <section>
+        <section transition:animate="fade">
           <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{year}</h2>
           <div class="space-y-6 sm:space-y-8">
             {postsByYear[year].map((post) => (
@@ -45,6 +45,7 @@ const sortedYears = Object.keys(postsByYear)
                   <a
                     href={`/blog/${post.slug}`}
                     class="font-serif text-blue-800 text-xl sm:text-2xl underline decoration-gray-300"
+                    transition:name={`post-title-${post.slug}`}
                   >
                     {post.data.title}
                     {post.data.bestOf && <Star class="inline-block ml-2" />}
