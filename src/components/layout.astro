@@ -52,7 +52,9 @@ const { title } = Astro.props;
   </head>
   <body class="antialiased bg-gray-50 text-gray-950 selection:bg-blue-800/25">
     <div class="px-4 pb-24 mx-auto">
-      <nav class:list={[
+      <nav 
+        transition:persist
+        class:list={[
           "bg-gray-100 border-b-2 border--b-gray-200 -mx-4 p-3 sm:p-4",
           "px-8 sm:px-0",
           "z-10",
