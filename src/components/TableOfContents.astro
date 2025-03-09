@@ -1,0 +1,104 @@
+---
+export interface Props {
+  headings: {
+    depth: number;
+    slug: string;
+    text: string;
+  }[];
+}
+
+const { headings } = Astro.props;
+---
+
+<div class="toc-container relative">
+  <button
+    id="toc-button"
+    class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center border border-gray-200 hover:bg-gray-50 transition-colors"
+    aria-label="Table of Contents"
+  >
+    <div id="toc-progress" class="absolute inset-0 rounded-full opacity-20 transition-all duration-300"></div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 text-gray-700 z-10"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h7"
+      />
+    </svg>
+  </button>
+
+  <div
+    id="toc-content"
+    class="fixed bottom-20 right-6 z-50 w-64 max-h-[70vh] overflow-y-auto bg-white shadow-lg rounded-lg border border-gray-200 p-4 hidden transition-opacity duration-200 opacity-100"
+  >
+    <h3 class="text-lg font-semibold mb-2 text-gray-800">Table of Contents</h3>
+    <ul class="space-y-2">
+      {
+        headings.map((heading) => (
+          <li class={`toc-item ${heading.depth === 2 ? 'pl-0' : heading.depth === 3 ? 'pl-4' : heading.depth === 4 ? 'pl-8' : heading.depth === 5 ? 'pl-12' : 'pl-16'}`}>
+            <a
+              href={`#${heading.slug}`}
+              class="block text-gray-600 hover:text-blue-600 transition-colors text-sm py-1"
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  /* Only keep minimal styles that can't be done with Tailwind */
+  #toc-content.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    #toc-content.hidden {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Add this script to handle active class with Tailwind
+  document.addEventListener('astro:page-load', () => {
+    // Set up a mutation observer to add Tailwind classes for active items
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const target = mutation.target as HTMLElement;
+          if (target.classList.contains('active')) {
+            const link = target.querySelector('a');
+            if (link) {
+              link.classList.remove('text-gray-600');
+              link.classList.add('text-blue-800', 'font-semibold');
+            }
+          } else {
+            const link = target.querySelector('a');
+            if (link) {
+              link.classList.remove('text-blue-800', 'font-semibold');
+              link.classList.add('text-gray-600');
+            }
+          }
+        }
+      });
+    });
+    
+    // Observe all toc items
+    document.querySelectorAll('.toc-item').forEach(item => {
+      observer.observe(item, { attributes: true });
+    });
+  });
+</script>
+

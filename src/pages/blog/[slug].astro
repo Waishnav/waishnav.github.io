@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from "../../components/layout.astro";
 import Prose from "../../components/prose.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
 
 export const getStaticPaths = (async () => {
   const posts = await getCollection("posts");
@@ -14,11 +15,11 @@ export const getStaticPaths = (async () => {
 
 const { post } = Astro.props;
 
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  <div class="px-1">
+  <div class="px-1 relative">
     <h1 
       class="text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-[3.5rem] font-bold"
       transition:name={`post-title-${post.slug}`}
@@ -38,6 +39,8 @@ const { Content } = await post.render();
         })
       }
     </p>
+
+    {headings.length > 0 && <TableOfContents headings={headings} />}
 
     <div 
       class="mt-4 sm:mt-6 md:mt-8"
@@ -109,4 +112,153 @@ const { Content } = await post.render();
       margin: 1.5em 0;
     }
   }
-</style> 
+</style>
+
+<script>
+  // Initialize the table of contents functionality
+  let updateActiveHeading: (() => void) | null = null;
+  let scrollListenerActive = true;
+  let hideTimeout: number | null = null;
+  
+  function initTableOfContents() {
+    const tocContainer = document.querySelector('.toc-container');
+    const tocButton = document.getElementById('toc-button');
+    const tocContent = document.getElementById('toc-content');
+    const tocProgress = document.getElementById('toc-progress');
+    const headingElements = Array.from(document.querySelectorAll('h2, h3, h4, h5, h6'));
+    
+    if (!tocButton || !tocContent || !tocProgress || headingElements.length === 0) return;
+    
+    // Function to show the TOC
+    const showTOC = () => {
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+      tocContent.classList.remove('hidden');
+    };
+    
+    // Function to hide the TOC with delay
+    const hideTOC = () => {
+      // Only hide if neither the button nor the content is being hovered
+      if (!tocButton.matches(':hover') && !tocContent.matches(':hover')) {
+        hideTimeout = window.setTimeout(() => {
+          tocContent.classList.add('hidden');
+        }, 500);
+      }
+    };
+    
+    // Show TOC when hovering over button or content
+    tocButton.addEventListener('mouseenter', showTOC);
+    tocContent.addEventListener('mouseenter', showTOC);
+    
+    // Set up hide timeout when leaving either element
+    tocButton.addEventListener('mouseleave', hideTOC);
+    tocContent.addEventListener('mouseleave', hideTOC);
+    
+    // For mobile: toggle on click (since hover isn't reliable on touch devices)
+    tocButton.addEventListener('click', () => {
+      tocContent.classList.toggle('hidden');
+    });
+    
+    // Close TOC when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (tocButton && !tocButton.contains(target) && 
+          tocContent && !tocContent.contains(target)) {
+        tocContent.classList.add('hidden');
+      }
+    });
+    
+    // Handle clicks on TOC links
+    const tocLinks = document.querySelectorAll('.toc-item a');
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Temporarily disable scroll listener to prevent interference
+        scrollListenerActive = false;
+        
+        // Get the clicked heading's ID from the href
+        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+        if (!href) return;
+        
+        const headingId = href.substring(1); // Remove the # character
+        
+        // Update active class in TOC
+        tocLinks.forEach(l => l.parentElement?.classList.remove('active'));
+        (e.currentTarget as HTMLElement).parentElement?.classList.add('active');
+        
+        // Hide TOC after clicking on mobile
+        if (window.innerWidth < 768) {
+          tocContent.classList.add('hidden');
+        }
+        
+        // Re-enable scroll listener after navigation completes
+        setTimeout(() => {
+          scrollListenerActive = true;
+        }, 500); // Wait for scroll to complete
+      });
+    });
+    
+    // Update active heading and progress on scroll
+    updateActiveHeading = () => {
+      if (!scrollListenerActive) return;
+      
+      // Find the current visible heading using Intersection Observer logic
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const scrollBottom = scrollPosition + viewportHeight;
+      
+      // Find the heading that's closest to 1/4 of the viewport from the top
+      const targetPosition = scrollPosition + viewportHeight * 0.25;
+      
+      let activeHeading = null;
+      let closestDistance = Infinity;
+      
+      headingElements.forEach((heading, index) => {
+        const element = heading as HTMLElement;
+        const headingTop = element.offsetTop;
+        const distance = Math.abs(headingTop - targetPosition);
+        
+        // If this heading is closer to the target position than the current closest
+        if (distance < closestDistance && headingTop <= scrollBottom) {
+          closestDistance = distance;
+          activeHeading = index - 1;
+        }
+      });
+      
+      // Update active class in TOC
+      const tocItems = document.querySelectorAll('.toc-item');
+      tocItems.forEach(item => item.classList.remove('active'));
+      
+      if (activeHeading !== null && tocItems[activeHeading]) {
+        tocItems[activeHeading].classList.add('active');
+      }
+      
+      // Update progress circle
+      const scrollPercentage = Math.min(
+        100,
+        Math.round((scrollPosition / (document.body.scrollHeight - window.innerHeight)) * 100)
+      );
+      tocProgress.style.background = `conic-gradient(#3b82f6 ${scrollPercentage}%, transparent 0%)`;
+    };
+    
+    window.addEventListener('scroll', updateActiveHeading);
+    updateActiveHeading(); // Initial update
+  }
+
+  // Run on initial page load
+  document.addEventListener('DOMContentLoaded', initTableOfContents);
+  
+  // Re-run when navigating with View Transitions
+  document.addEventListener('astro:page-load', initTableOfContents);
+  
+  // Clean up event listeners when leaving the page
+  document.addEventListener('astro:before-preparation', () => {
+    if (updateActiveHeading) {
+      window.removeEventListener('scroll', updateActiveHeading);
+    }
+    if (hideTimeout) {
+      clearTimeout(hideTimeout);
+    }
+  });
+</script> 
