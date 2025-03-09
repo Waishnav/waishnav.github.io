@@ -23,6 +23,7 @@ const { Content, headings } = await post.render();
     <h1 
       class="text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-[3.5rem] font-bold"
       transition:name={`post-title-${post.slug}`}
+      id="top"
     >
       {post.data.title}
     </h1>
@@ -80,6 +81,28 @@ const { Content, headings } = await post.render();
     </div>
   </div>
   -->
+
+  <!-- Go to Top Button -->
+  <button
+    id="go-to-top"
+    class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center border border-gray-200 hover:bg-gray-50 transition-colors opacity-0 invisible"
+    aria-label="Go to top"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6 text-gray-700"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 10l7-7m0 0l7 7m-7-7v18"
+      />
+    </svg>
+  </button>
 </Layout>
 
 <style>
@@ -111,6 +134,17 @@ const { Content, headings } = await post.render();
     :global(.prose img) {
       margin: 1.5em 0;
     }
+  }
+  
+  /* Go to Top button styles */
+  #go-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  
+  #go-to-top {
+    transition: opacity 0.3s, visibility 0.3s;
   }
 </style>
 
@@ -246,11 +280,43 @@ const { Content, headings } = await post.render();
     updateActiveHeading(); // Initial update
   }
 
+  // Go to Top button functionality
+  function initGoToTopButton() {
+    const goToTopButton = document.getElementById('go-to-top');
+    
+    if (!goToTopButton) return;
+    
+    // Show button when scrolled down
+    window.addEventListener('scroll', () => {
+      // Show button when scrolled down more than 300px
+      if (window.scrollY > 300) {
+        goToTopButton.classList.add('visible');
+      } else {
+        goToTopButton.classList.remove('visible');
+      }
+    });
+    
+    // Scroll to top when clicked
+    goToTopButton.addEventListener('click', () => {
+      // Smooth scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   // Run on initial page load
-  document.addEventListener('DOMContentLoaded', initTableOfContents);
+  document.addEventListener('DOMContentLoaded', () => {
+    initTableOfContents();
+    initGoToTopButton();
+  });
   
   // Re-run when navigating with View Transitions
-  document.addEventListener('astro:page-load', initTableOfContents);
+  document.addEventListener('astro:page-load', () => {
+    initTableOfContents();
+    initGoToTopButton();
+  });
   
   // Clean up event listeners when leaving the page
   document.addEventListener('astro:before-preparation', () => {
