@@ -1,50 +1,73 @@
 ---
-repo: Waishnav/waishnav.github.io
-media_path: /public
-website_url: https://waishnav.tech
 collections:
-  - name: posts
-    git_path: /src/content/posts
+  - file_extension: .md
     filename_pattern: title
-    file_extension: .md
+    git_path: /src/content/posts
     metadata_schema:
       - name: title
+        required: true
         type: title
-        required: true
       - name: date
-        type: datetime
         required: true
-      - name: tags
-        type: multi_select
-        required: false
-        allowed_values:
+        type: datetime
+      - allowed_values:
           - indie-hacking
           - projects
-          - name
-        stored_values: []
-      - name: unlisted
-        type: boolean
+          - buildinpublic
+          - indie-hacking
+          - projects
+          - buildinpublic
+          - learn-in-public
+          - gsoc
+          - circuitverse
+          - google-summer-of-code
+          - ruby
+          - rails
+          - open-source
+          - freelance
+          - frontend
+          - nextjs
+          - redux
+          - react
+          - javascript
+          - slack-integration
+          - markdown-editor
+          - rails-engine
+          - language-filter
+          - spam-filter
+          - moderation-tools
+          - spam-reports
+        name: tags
         required: false
-  - name: projects
-    git_path: /src/content/projects
+        stored_values: []
+        type: multi_select
+      - name: unlisted
+        required: false
+        type: boolean
+    name: posts
+  - file_extension: .md
     filename_pattern: title
-    file_extension: .md
+    git_path: /src/content/projects
     metadata_schema:
       - name: title
-        type: title
         required: true
+        type: title
       - name: description
+        required: false
         type: multiline
-        required: false
       - name: order
-        type: singleline
         required: false
+        type: number
       - name: url
-        type: singleline
         required: false
+        type: singleline
       - name: users
-        type: singleline
         required: false
+        type: number
+    name: projects
+media_path: /public
+repo: Waishnav/waishnav.github.io
+website_url: https://waishnav.tech
 ---
 # GitCMS Configuration File
 > [!WARNING]
