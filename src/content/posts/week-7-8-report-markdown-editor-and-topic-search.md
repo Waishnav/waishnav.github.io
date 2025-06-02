@@ -47,4 +47,4 @@ The challenge with this approach is that we are unsure if the host Rails applica
 
 ![](https://miro.medium.com/v2/resize:fit:700/1*6wBCwiYdGWTXkgwQeOKVqw.png)
 
-Finally, Thanks for reading this so far and have good day. If you have any question or anything wants to share ping me on [twitter](https://x.com/wshxnv)!
+Finally, Thanks for reading this so far and have good day. If you have any question or anything wants to share ping me on [twitter](https://x.com/_wolf_dev)!
