@@ -2,7 +2,7 @@
 title: GitCMS
 order: 0
 url: https://gitcms.blog/
-users: 88
+users: 115
 description: It is chrome extension which turns GitHub into headless CMS for Nextjs, Astro, Hugo, Gatsby, Jekyll etc
 ---
 
