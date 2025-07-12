@@ -187,13 +187,10 @@ const { Content, headings } = await post.render();
     tocContent.addEventListener('mouseenter', showTOC);
     
     // Set up hide timeout when leaving either element
-    tocButton.addEventListener('mouseleave', hideTOC);
-    tocContent.addEventListener('mouseleave', hideTOC);
-    
-    // For mobile: toggle on click (since hover isn't reliable on touch devices)
-    tocButton.addEventListener('click', () => {
-      tocContent.classList.toggle('hidden');
+    tocButton.addEventListener('mouseleave', () => {
+      console.log('mouseleave');
     });
+    tocContent.addEventListener('mouseleave', hideTOC);
     
     // Close TOC when clicking outside
     document.addEventListener('click', (e) => {
