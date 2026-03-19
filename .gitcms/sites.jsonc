@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "sites": [
+    {
+      "key": "waishnav",
+      "display_name": "Waishnav",
+      "website_url": "https://waishnav.github.io",
+      "root_path": ""
+    }
+  ]
+}

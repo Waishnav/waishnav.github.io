@@ -1,0 +1,79 @@
+{
+  "version": "1",
+  "media_path": "/public",
+  "ssg_framework": "astro",
+  "frontmatter_format": "yaml",
+  "sitemap_url": "https://waishnav.github.io/sitemap-index.xml",
+  "publishing_mode": "editorial_workflow",
+  "collections": [
+    {
+      "name": "posts",
+      "git_path": "/src/content/posts/",
+      "file_extension": ".md",
+      "filename_pattern": "",
+      "collection_type": "flat",
+      "frontmatter_schema": [
+        {
+          "name": "title",
+          "type": "title",
+          "label": "Title"
+        },
+        {
+          "name": "date",
+          "type": "datetime",
+          "label": "Date"
+        },
+        {
+          "name": "tags",
+          "type": "multiselect",
+          "label": "Tags",
+          "options": [
+            "indie-hacking",
+            "buildinpublic"
+          ],
+          "color": "blue"
+        },
+        {
+          "name": "unlisted",
+          "type": "boolean",
+          "label": "Unlisted",
+          "default": false
+        }
+      ]
+    },
+    {
+      "name": "projects",
+      "git_path": "/src/content/projects/",
+      "file_extension": ".md",
+      "filename_pattern": "",
+      "collection_type": "flat",
+      "frontmatter_schema": [
+        {
+          "name": "title",
+          "type": "title",
+          "label": "Title"
+        },
+        {
+          "name": "order",
+          "type": "number",
+          "label": "Order"
+        },
+        {
+          "name": "url",
+          "type": "url",
+          "label": "Url"
+        },
+        {
+          "name": "users",
+          "type": "number",
+          "label": "Users"
+        },
+        {
+          "name": "description",
+          "type": "richtext",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
