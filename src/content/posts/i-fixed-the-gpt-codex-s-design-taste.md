@@ -1,6 +1,6 @@
 ---
 title: i fixed it codex/gpt's frontend design skill issues
-date: "2026-02-19"
+date: "2026-02-18"
 ---
 
 ## back story
