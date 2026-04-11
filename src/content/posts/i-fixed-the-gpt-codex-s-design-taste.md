@@ -1,5 +1,6 @@
 ---
 title: i fixed gpt's design taste
+date: "2026-02-18"
 ---
 
 ## back story
