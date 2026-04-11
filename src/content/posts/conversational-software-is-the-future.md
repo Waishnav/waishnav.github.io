@@ -24,8 +24,6 @@ it showed us future where agents will be talking to another agents to get shit d
 
 it showed the future where humans will not be needed much in knowledge/digital work
 
-​
-
 ## CLI —> UI —> CLI —> UI
 
 Back in older days when personal computer were not introduced in the market, interface for interacting with these black box machines were showing raw data through cli or some sort of logs
@@ -34,12 +32,8 @@ and these system were used by technical people only
 
 Apple made shift in the market by introducing UI and OS and Personal computers to the market
 
-​
-
 > The computer is a bicycle for the mind
 > \- Steve Jobs
-
-​
 
 Let's discuss what is UI, why it exists in the first place
 
@@ -55,6 +49,10 @@ So UI was needed for humans to help em summarize and make sense of data
 
 it was invented with sole purpose of simplification&#x20;
 
-​
+## Conversational UX
+
+With the introduction of ChatGPT apps/ MCP apps (extension of MCP), i feel like these tooling around LLMs is slowly becoming the sort of OS where people don't need to leave ChatGPT/Claude at all they can do knowledge work right from that interface if every web app just turned their functionality into MCP
+
+(there are lots of problem with MCP like context bloat with lots of tool but that's not fair to talk about here)
 
 ​
