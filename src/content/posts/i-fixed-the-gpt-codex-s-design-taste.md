@@ -1,5 +1,6 @@
 ---
 title: this is testing
+date: "2026-04-11"
 ---
 
 alkjdf
