@@ -43,8 +43,6 @@ so we built charts, dashboards, graphs to make sense of large chunks of data
 
 and we built CRUD apps around data to mutate the data over the time of it's need (this is the era of CRUD apps)
 
-​
-
 So UI was needed for humans to help em summarize and make sense of data
 
 it was invented with sole purpose of simplification&#x20;
@@ -55,4 +53,4 @@ With the introduction of ChatGPT apps/ MCP apps (extension of MCP), i feel like 
 
 (there are lots of problem with MCP like context bloat with lots of tool but that's not fair to talk about here)
 
-​
+I feel like conversational and agentic model are gonna takeover the SaaS and design&#x20;
