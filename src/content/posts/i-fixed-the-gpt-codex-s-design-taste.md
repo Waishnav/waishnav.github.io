@@ -112,7 +112,7 @@ so i first started around setting up the loop and bootstrapping the repository w
 2. &#x20;use `playwriter` skills to use existing browser and and go to `localhost:4000`and take screenshots of newly generated ui for `/1`, `/2`, `/3`, `/4` and `/5` (Theo's prompt included to output 5 design of same landing page) and save those screenshot files in our experiments folder as results which i can review it
 3. &#x20;after that in the main orchestrate codex instance letting model critque the work done in that experiment by older codex instance (letting model free hand to understand whether that experiment succeeds or not)
 4. using older experiment critique points, rewrite new frontend design skill for new experiment in `experiments/version-[x]/.agents/skills/frontend-design/SKILLS.md`
-5. &#x20;and continue to next experiment if output are still not aligned or similar to opus
+5. and continue to next experiment if output are still not aligned or similar to opus
 
 I think i'm bit crazy doing this experiment, and i regreted doing it so in it's early iteration prompt was leaking into it's output and there were lots of issues that i observered with the first version of this self improvement loop but later after iteration i figured out and
 
