@@ -38,8 +38,7 @@
         {
           "name": "title",
           "type": "title",
-          "label": "Title",
-          "required": true
+          "label": "Title"
         },
         {
           "name": "date",
@@ -61,11 +60,6 @@
           "type": "boolean",
           "label": "Unlisted",
           "default": false
-        },
-        {
-          "name": "cover_image",
-          "type": "image",
-          "isCover": true
         }
       ]
     },
