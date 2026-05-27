@@ -1,6 +1,28 @@
 {
-  "version": "1",
-  "media_path": "/public",
+  "version": "1.2",
+  "media": {
+    "default_library": "repo_media",
+    "libraries": [
+      {
+        "key": "repo_media",
+        "label": "Repository media",
+        "references": {
+          "write": {
+            "mode": "root_relative",
+            "base_path": "/"
+          },
+          "allow_default_library_fallback": true
+        },
+        "limits": {
+          "max_file_size_mb": 10
+        },
+        "driver": "git",
+        "storage": {
+          "root_path": "public"
+        }
+      }
+    ]
+  },
   "ssg_framework": "astro",
   "frontmatter_format": "yaml",
   "sitemap_url": "https://waishnav.github.io/sitemap-index.xml",
