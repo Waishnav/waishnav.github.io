@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 240" role="img" aria-label="GitCMS logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="240" rx="40" fill="none"/>
+  <g transform="translate(36 36)">
+    <rect x="0" y="0" width="168" height="168" rx="42" fill="#111827"/>
+    <path d="M50 56c24-24 62-24 86 0l-20 20c-13-13-34-13-47 0s-13 34 0 47c11 11 28 13 41 5v-22H86V78h58v65c-29 27-75 26-103-2-24-24-24-62 0-86z" fill="#f8fafc"/>
+    <circle cx="49" cy="47" r="9" fill="#e05743"/>
+    <circle cx="130" cy="48" r="9" fill="#f6b35f"/>
+    <circle cx="127" cy="130" r="9" fill="#75b88d"/>
+    <path d="M58 49h63M128 57v64" stroke="#f8fafc" stroke-width="7" stroke-linecap="round" opacity=".92"/>
+  </g>
+  <text x="238" y="151" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="96" font-weight="800" letter-spacing="-4" fill="url(#g)">GitCMS</text>
+</svg>
