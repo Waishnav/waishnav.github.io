@@ -5,6 +5,7 @@ url: https://gitcms.dev
 users: 385
 description: |
   Modern tooling for markdown-first content sites — for blogs, docs, changelogs, and help docs.
+logo: /projects/gitcms/gitcms-logo.svg
 ---
 
 
