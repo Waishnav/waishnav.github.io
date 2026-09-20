@@ -6,7 +6,7 @@ url: https://preview-test-thumbnails.vercel.app
 users: 121
 isActive: true
 order: 1
-logo: /projects/preview-test-thumbnails/ptt-logo.png
+logo: /projects/preview-test-thumbnails/ptt-logo.svg
 ---
 
 
