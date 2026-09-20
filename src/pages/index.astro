@@ -81,29 +81,41 @@ const projects = (
               href={project.data.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="block bg-white shadow-sm px-3 sm:px-4 py-2 sm:py-3 ring-1 ring-gray-200/50 hover:shadow-md transition-shadow"
+              class="flex items-start gap-3 sm:gap-4 bg-white shadow-sm px-3 sm:px-4 py-2 sm:py-3 ring-1 ring-gray-200/50 hover:shadow-md transition-shadow"
             >
-              <div class="flex items-center justify-between">
-                <p class="font-medium text-lg sm:text-xl">
-                  {project.data.title}
-                </p>
-                <div class="flex items-center gap-2">
-                  {project.data.users >= 0 && (
-                    <p class="text-xs sm:text-sm text-gray-400">
-                      {project.data.users} users
-                    </p>
-                  )}
-                  {project.data.isActive && (
-                    <div class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-                    </div>
-                  )}
+              {project.data.logo && (
+                <img
+                  src={project.data.logo}
+                  alt={`${project.data.title} logo`}
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                  class="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-md object-contain bg-gray-50 ring-1 ring-gray-200/50"
+                />
+              )}
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-3">
+                  <p class="font-medium text-lg sm:text-xl">
+                    {project.data.title}
+                  </p>
+                  <div class="flex items-center gap-2 shrink-0">
+                    {project.data.users >= 0 && (
+                      <p class="text-xs sm:text-sm text-gray-400">
+                        {project.data.users} users
+                      </p>
+                    )}
+                    {project.data.isActive && (
+                      <div class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                      </div>
+                    )}
+                  </div>
                 </div>
+                <p class="mt-1 text-xs sm:text-sm text-gray-600">
+                  {project.data.description}
+                </p>
               </div>
-              <p class="mt-1 text-xs sm:text-sm text-gray-600">
-                {project.data.description}
-              </p>
             </a>
           ))
         }

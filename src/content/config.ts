@@ -26,6 +26,7 @@ const projectsCollection = defineCollection({
     isActive: z.boolean().default(true),
     order: z.number(),
     draft: z.boolean().optional(),
+    logo: z.string().optional(),
   }),
 });
 
