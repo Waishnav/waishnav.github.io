@@ -26,7 +26,7 @@
   "ssg_framework": "astro",
   "frontmatter_format": "yaml",
   "sitemap_url": "https://waishnav.github.io/sitemap-index.xml",
-  "publishing_mode": "editorial_workflow",
+  "publishing_mode": "direct_publish",
   "collections": [
     {
       "name": "posts",
