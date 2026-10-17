@@ -1,0 +1,35 @@
+{
+  "git_path": "/src/content/posts/",
+  "file_extension": ".md",
+  "filename_pattern": "",
+  "collection_type": "flat",
+  "frontmatter_schema": [
+    {
+      "name": "title",
+      "type": "title",
+      "label": "Title",
+      "required": true
+    },
+    {
+      "name": "date",
+      "type": "datetime",
+      "label": "Date"
+    },
+    {
+      "name": "tags",
+      "type": "multiselect",
+      "label": "Tags",
+      "options": [
+        "indie-hacking",
+        "buildinpublic"
+      ],
+      "color": "blue"
+    },
+    {
+      "name": "unlisted",
+      "type": "boolean",
+      "label": "Unlisted",
+      "default": false
+    }
+  ]
+}
