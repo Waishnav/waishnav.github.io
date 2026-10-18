@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.2",
   "media": {
     "default_library": "repo_media",
     "libraries": [
@@ -28,7 +28,81 @@
   "sitemap_url": "https://waishnav.github.io/sitemap-index.xml",
   "publishing_mode": "direct_publish",
   "collections": [
-    "posts",
-    "projects"
+    {
+      "name": "posts",
+      "git_path": "/src/content/posts/",
+      "file_extension": ".md",
+      "filename_pattern": "",
+      "collection_type": "flat",
+      "frontmatter_schema": [
+        {
+          "name": "title",
+          "type": "title",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "name": "date",
+          "type": "datetime",
+          "label": "Date"
+        },
+        {
+          "name": "tags",
+          "type": "multiselect",
+          "label": "Tags",
+          "options": [
+            "indie-hacking",
+            "buildinpublic"
+          ],
+          "color": "blue"
+        },
+        {
+          "name": "unlisted",
+          "type": "boolean",
+          "label": "Unlisted",
+          "default": false
+        }
+      ]
+    },
+    {
+      "name": "projects",
+      "git_path": "/src/content/projects/",
+      "file_extension": ".md",
+      "filename_pattern": "",
+      "collection_type": "flat",
+      "frontmatter_schema": [
+        {
+          "name": "title",
+          "type": "title",
+          "label": "Title",
+          "required": true
+        },
+        {
+          "name": "order",
+          "type": "number",
+          "label": "Order"
+        },
+        {
+          "name": "url",
+          "type": "url",
+          "label": "Url"
+        },
+        {
+          "name": "users",
+          "type": "number",
+          "label": "Users"
+        },
+        {
+          "name": "description",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "name": "logo",
+          "type": "image",
+          "required": true
+        }
+      ]
+    }
   ]
 }
