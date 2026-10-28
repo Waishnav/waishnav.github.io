@@ -5,8 +5,7 @@ title: DevSpace
 url: https://github.com/waishnav/devspace
 users: 2001
 order: -1
-logo: /projects/devspace/devspace-old-logo.webp
+logo: /projects/devspace/devspace-logo-blue-light-blue.webp
 ---
-
 
 ​
